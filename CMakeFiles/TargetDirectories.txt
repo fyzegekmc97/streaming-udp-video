@@ -1,0 +1,4 @@
+/home/feyzi/streaming-udp-video/CMakeFiles/edit_cache.dir
+/home/feyzi/streaming-udp-video/CMakeFiles/rebuild_cache.dir
+/home/feyzi/streaming-udp-video/CMakeFiles/Sender.dir
+/home/feyzi/streaming-udp-video/CMakeFiles/Receiver.dir
