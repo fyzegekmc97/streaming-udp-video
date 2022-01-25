@@ -6,17 +6,19 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <time.h>
 #include <ctime>
-
+#include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
 #include "protocols/basic_protocol.h"
 #include "sender/sender_socket.h"
 #include "util/util.h"
 #include "video/video_capture.h"
 
+using namespace cv ;
 using udp_streaming_video::BasicProtocolData;
 using udp_streaming_video::SenderSocket;
 using udp_streaming_video::VideoCapture;
+
 
 int main(int argc, char** argv) {
   const int port = udp_streaming_video::util::ProcessPortParam(argc, argv);
@@ -32,14 +34,23 @@ int main(int argc, char** argv) {
   const SenderSocket socket(ip_address, port);
   std::cout << "Sending to " << ip_address
             << " on port " << port << "." << std::endl;
-  VideoCapture video_capture(false, 1);
-  BasicProtocolData protocol_data;
-  struct timespec start ;
+  udp_streaming_video::VideoCapture video_capture(false, 1);
+  BasicProtocolData protocol_data ;
+  struct timespec start{} ;
   while (true) {
     protocol_data.SetImage(video_capture.GetFrameFromCamera());
     clock_gettime(CLOCK_MONOTONIC, &start);
     socket.SendPacket(protocol_data.PackageData());
     start_time[0] = start.tv_nsec ;
+    int some_key = cv::waitKey(0) ;
+    if(some_key)
+    {
+        break ;
+    }
+    else
+    {
+        continue ;
+    }
   }
   return 0;
 }

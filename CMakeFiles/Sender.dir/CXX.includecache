@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/feyzi/streaming-udp-video/src/protocols/basic_protocol.cpp
+protocols/basic_protocol.h
+/home/feyzi/streaming-udp-video/src/protocols/protocols/basic_protocol.h
+vector
+-
+
 /home/feyzi/streaming-udp-video/src/protocols/basic_protocol.h
 vector
 -
@@ -21,9 +27,11 @@ string
 -
 vector
 -
-time.h
--
 ctime
+-
+opencv2/core.hpp
+-
+opencv2/opencv.hpp
 -
 protocols/basic_protocol.h
 /home/feyzi/streaming-udp-video/src/protocols/basic_protocol.h
@@ -34,6 +42,20 @@ util/util.h
 video/video_capture.h
 /home/feyzi/streaming-udp-video/src/video/video_capture.h
 
+/home/feyzi/streaming-udp-video/src/sender/sender_socket.cpp
+sender/sender_socket.h
+/home/feyzi/streaming-udp-video/src/sender/sender/sender_socket.h
+arpa/inet.h
+-
+sys/socket.h
+-
+iostream
+-
+string
+-
+vector
+-
+
 /home/feyzi/streaming-udp-video/src/sender/sender_socket.h
 arpa/inet.h
 -
@@ -42,9 +64,29 @@ string
 vector
 -
 
+/home/feyzi/streaming-udp-video/src/util/util.cpp
+util/util.h
+/home/feyzi/streaming-udp-video/src/util/util/util.h
+iostream
+-
+sstream
+-
+
 /home/feyzi/streaming-udp-video/src/util/util.h
 vector
 -
+
+/home/feyzi/streaming-udp-video/src/video/video_capture.cpp
+video/video_capture.h
+/home/feyzi/streaming-udp-video/src/video/video/video_capture.h
+iostream
+-
+vector
+-
+opencv2/core/core.hpp
+/home/feyzi/streaming-udp-video/src/video/opencv2/core/core.hpp
+opencv2/highgui/highgui.hpp
+/home/feyzi/streaming-udp-video/src/video/opencv2/highgui/highgui.hpp
 
 /home/feyzi/streaming-udp-video/src/video/video_capture.h
 string
@@ -55,6 +97,18 @@ opencv2/core/core.hpp
 /home/feyzi/streaming-udp-video/src/video/opencv2/core/core.hpp
 opencv2/opencv.hpp
 /home/feyzi/streaming-udp-video/src/video/opencv2/opencv.hpp
+
+/home/feyzi/streaming-udp-video/src/video/video_frame.cpp
+video/video_frame.h
+/home/feyzi/streaming-udp-video/src/video/video/video_frame.h
+string
+-
+vector
+-
+opencv2/core/core.hpp
+/home/feyzi/streaming-udp-video/src/video/opencv2/core/core.hpp
+opencv2/highgui/highgui.hpp
+/home/feyzi/streaming-udp-video/src/video/opencv2/highgui/highgui.hpp
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -870,6 +924,10 @@ opencv2/imgcodecs.hpp
 opencv2/videoio.hpp
 /usr/local/include/opencv4/opencv2/opencv2/videoio.hpp
 
+/usr/local/include/opencv4/opencv2/highgui/highgui.hpp
+opencv2/highgui.hpp
+/usr/local/include/opencv4/opencv2/highgui/opencv2/highgui.hpp
+
 /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
@@ -1078,9 +1136,39 @@ opencv2/imgproc.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
 
+src/protocols/basic_protocol.h
+vector
+-
+protocols/protocol.h
+src/protocols/protocols/protocol.h
+video/video_frame.h
+src/protocols/video/video_frame.h
+
 src/protocols/protocol.h
 vector
 -
+
+src/sender/sender_socket.h
+arpa/inet.h
+-
+string
+-
+vector
+-
+
+src/util/util.h
+vector
+-
+
+src/video/video_capture.h
+string
+-
+video/video_frame.h
+src/video/video/video_frame.h
+opencv2/core/core.hpp
+src/video/opencv2/core/core.hpp
+opencv2/opencv.hpp
+src/video/opencv2/opencv.hpp
 
 src/video/video_frame.h
 vector

@@ -8,9 +8,11 @@
 #include "protocols/basic_protocol.h"
 #include "receiver/receiver_socket.h"
 #include "util/util.h"
+#include <boost/chrono.hpp>
 
 using udp_streaming_video::BasicProtocolData;
 using udp_streaming_video::ReceiverSocket;
+using namespace std::chrono ;
 
 int main(int argc, char** argv) {
   const int port = udp_streaming_video::util::ProcessPortParam(argc, argv);

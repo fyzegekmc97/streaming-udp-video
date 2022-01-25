@@ -187,6 +187,8 @@ bin/Receiver: /usr/local/lib/libopencv_wechat_qrcode.so.4.5.5
 bin/Receiver: /usr/local/lib/libopencv_xfeatures2d.so.4.5.5
 bin/Receiver: /usr/local/lib/libopencv_xobjdetect.so.4.5.5
 bin/Receiver: /usr/local/lib/libopencv_xphoto.so.4.5.5
+bin/Receiver: /home/feyzi/.local/share/Trash/files/live555-latest/live/BasicUsageEnvironment/libBasicUsageEnvironment.a
+bin/Receiver: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
 bin/Receiver: /usr/local/lib/libopencv_shape.so.4.5.5
 bin/Receiver: /usr/local/lib/libopencv_highgui.so.4.5.5
 bin/Receiver: /usr/local/lib/libopencv_datasets.so.4.5.5
