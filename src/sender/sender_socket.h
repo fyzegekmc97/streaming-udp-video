@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include <boost/chrono.hpp>
 
 namespace udp_streaming_video {
 
@@ -19,7 +20,10 @@ class SenderSocket {
 
   void SendPacket(const std::vector<unsigned char> &data) const;
 
-  void SendPacket(const std::vector<uint64_t> &data) const ;
+    __attribute__((unused)) void SendCurrentTime_TCP(const std::string &receiver_ip, const int receiver_port) const;
+
+    __attribute__((unused)) void SendCurrentTime_UDP(const std::string &receiver_ip,
+                                                                   const int receiver_port) const ;
 
  private:
     // The socket identifier (handle).

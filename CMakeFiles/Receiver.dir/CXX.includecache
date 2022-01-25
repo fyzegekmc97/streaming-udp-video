@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/feyzi/streaming-udp-video/src/protocols/basic_protocol.cpp
-protocols/basic_protocol.h
-/home/feyzi/streaming-udp-video/src/protocols/protocols/basic_protocol.h
-vector
--
-
 /home/feyzi/streaming-udp-video/src/protocols/basic_protocol.h
 vector
 -
@@ -29,6 +23,10 @@ protocols/basic_protocol.h
 /home/feyzi/streaming-udp-video/src/protocols/basic_protocol.h
 receiver/receiver_socket.h
 /home/feyzi/streaming-udp-video/src/receiver/receiver_socket.h
+opencv2/opencv.hpp
+-
+opencv2/core.hpp
+-
 util/util.h
 /home/feyzi/streaming-udp-video/src/util/util.h
 boost/chrono.hpp
@@ -39,9 +37,17 @@ receiver/receiver_socket.h
 /home/feyzi/streaming-udp-video/src/receiver/receiver/receiver_socket.h
 arpa/inet.h
 -
-string.h
+sys/socket.h
+-
+cstdio
 -
 sys/socket.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+cstring
 -
 iostream
 -
@@ -52,41 +58,9 @@ vector
 vector
 -
 
-/home/feyzi/streaming-udp-video/src/util/util.cpp
-util/util.h
-/home/feyzi/streaming-udp-video/src/util/util/util.h
-iostream
--
-sstream
--
-
 /home/feyzi/streaming-udp-video/src/util/util.h
 vector
 -
-
-/home/feyzi/streaming-udp-video/src/video/video_capture.cpp
-video/video_capture.h
-/home/feyzi/streaming-udp-video/src/video/video/video_capture.h
-iostream
--
-vector
--
-opencv2/core/core.hpp
-/home/feyzi/streaming-udp-video/src/video/opencv2/core/core.hpp
-opencv2/highgui/highgui.hpp
-/home/feyzi/streaming-udp-video/src/video/opencv2/highgui/highgui.hpp
-
-/home/feyzi/streaming-udp-video/src/video/video_frame.cpp
-video/video_frame.h
-/home/feyzi/streaming-udp-video/src/video/video/video_frame.h
-string
--
-vector
--
-opencv2/core/core.hpp
-/home/feyzi/streaming-udp-video/src/video/opencv2/core/core.hpp
-opencv2/highgui/highgui.hpp
-/home/feyzi/streaming-udp-video/src/video/opencv2/highgui/highgui.hpp
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -902,10 +876,6 @@ opencv2/imgcodecs.hpp
 opencv2/videoio.hpp
 /usr/local/include/opencv4/opencv2/opencv2/videoio.hpp
 
-/usr/local/include/opencv4/opencv2/highgui/highgui.hpp
-opencv2/highgui.hpp
-/usr/local/include/opencv4/opencv2/highgui/opencv2/highgui.hpp
-
 /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
@@ -1114,14 +1084,6 @@ opencv2/imgproc.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
 
-src/protocols/basic_protocol.h
-vector
--
-protocols/protocol.h
-src/protocols/protocols/protocol.h
-video/video_frame.h
-src/protocols/video/video_frame.h
-
 src/protocols/protocol.h
 vector
 -
@@ -1129,20 +1091,6 @@ vector
 src/receiver/receiver_socket.h
 vector
 -
-
-src/util/util.h
-vector
--
-
-src/video/video_capture.h
-string
--
-video/video_frame.h
-src/video/video/video_frame.h
-opencv2/core/core.hpp
-src/video/opencv2/core/core.hpp
-opencv2/opencv.hpp
-src/video/opencv2/opencv.hpp
 
 src/video/video_frame.h
 vector

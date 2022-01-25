@@ -36,14 +36,13 @@ int main(int argc, char** argv) {
             << " on port " << port << "." << std::endl;
   udp_streaming_video::VideoCapture video_capture(false, 1);
   BasicProtocolData protocol_data ;
-  struct timespec start{} ;
+
   while (true) {
     protocol_data.SetImage(video_capture.GetFrameFromCamera());
-    clock_gettime(CLOCK_MONOTONIC, &start);
     socket.SendPacket(protocol_data.PackageData());
-    start_time[0] = start.tv_nsec ;
-    int some_key = cv::waitKey(0) ;
-    if(some_key)
+    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now() ;
+    char some_key = (char)cv::waitKey(0) ;
+    if(some_key == 27)
     {
         break ;
     }

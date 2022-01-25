@@ -1,9 +1,3 @@
-// The ReceiverSocket class provides an abstraction for a UDP socket that
-// listens to incoming packets from the sender on a specified port number.
-//
-// Pass the desired port number to listen on into the constructor. Then call
-// BindSocketToListen() to bind the socket. If that method returns true, you can
-// call GetPacket() to get incoming packets from the network.
 
 #ifndef SRC_RECEIVER_RECEIVER_SOCKET_H_
 #define SRC_RECEIVER_RECEIVER_SOCKET_H_
@@ -30,6 +24,10 @@ class ReceiverSocket {
   // Waits for the next packet on the given port, and returns vector of bytes
   // (stored as unsigned chars) that contains the raw packet data.
   const std::vector<unsigned char> GetPacket() const;
+
+  void CalculateTimeDifference_TCP() const ;
+
+  __attribute__((unused)) void CalculateTimeDifference_UDP(const int port_number) const ;
 
  private:
   // This buffer will be used to collect incoming packet data. It is only used

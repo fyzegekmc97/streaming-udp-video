@@ -1,9 +1,12 @@
 #include "receiver/receiver_socket.h"
 
 #include <arpa/inet.h>
-#include <string.h>
 #include <sys/socket.h>
-
+#include <cstdio>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <cstring>
 #include <iostream>
 #include <vector>
 
@@ -56,4 +59,65 @@ const std::vector<unsigned char> ReceiverSocket::GetPacket() const {
   return data;
 }
 
-}  // namespace udp_streaming_video
+void ReceiverSocket::CalculateTimeDifference_TCP() const {
+    int sock = 0, valread;
+    sockaddr_in serv_addr{};
+    char *hello ;
+    char buffer[1024] = {0};
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+    {
+        printf("\n Socket creation error \n");
+        exit(EXIT_FAILURE);
+    }
+
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_port = htons(INADDR_ANY);
+
+    // Convert IPv4 and IPv6 addresses from text to binary form
+    if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)
+    {
+        printf("\nInvalid address/ Address not supported \n");
+        exit(EXIT_FAILURE);
+    }
+
+    if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
+        printf("\nConnection Failed \n");
+        exit(EXIT_FAILURE);
+    }
+    valread = read( sock , buffer, 1024);
+    printf("%s\n",buffer );
+};
+
+__attribute__((unused)) void ReceiverSocket::CalculateTimeDifference_UDP(const int port_number) const {
+    int sockfd;
+    char buffer[1024];
+    char *hello = "Hello from server";
+    sockaddr_in servaddr, cliaddr;
+
+    // Creating socket file descriptor
+    if ( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) {
+        perror("socket creation failed");
+        exit(EXIT_FAILURE);
+    }
+
+    memset(&servaddr, 0, sizeof(servaddr));
+    memset(&cliaddr, 0, sizeof(cliaddr));
+    servaddr.sin_family    = AF_INET;
+    servaddr.sin_addr.s_addr = INADDR_ANY;
+    servaddr.sin_port = htons(port_number);
+    if ( bind(sockfd, (const struct sockaddr *)&servaddr,
+              sizeof(servaddr)) < 0 )
+    {
+        perror("bind failed");
+        exit(EXIT_FAILURE);
+    }
+    int len, n;
+    len = sizeof(cliaddr);
+    n = recvfrom(sockfd, (char *)buffer, 1024,
+                 MSG_WAITALL, ( struct sockaddr *) &cliaddr,
+                 (socklen_t*)&len);
+    buffer[n] = '\0';
+    printf("Client : %s\n", buffer);
+}
+
+}
