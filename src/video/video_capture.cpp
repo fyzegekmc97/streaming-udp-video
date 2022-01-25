@@ -29,6 +29,7 @@ VideoFrame VideoCapture::GetFrameFromCamera() {
   if (show_video_) {
     video_frame.Display();
   }
+
   return video_frame;
 }
 

@@ -30,4 +30,16 @@ void SenderSocket::SendPacket(
       sizeof(receiver_addr_));
 }
 
-}  // namespace udp_streaming_video
+void SenderSocket::SendPacket(
+        const std::vector<uint64_t> &data) const{
+    sendto(
+            socket_handle_,
+            data.data(),
+            data.size(),
+            0,
+            const_cast<sockaddr*>(reinterpret_cast<const sockaddr*>(&receiver_addr_)),
+            sizeof(receiver_addr_));
+
+}
+
+}

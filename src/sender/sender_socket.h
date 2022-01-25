@@ -19,6 +19,8 @@ class SenderSocket {
 
   void SendPacket(const std::vector<unsigned char> &data) const;
 
+  void SendPacket(const std::vector<uint64_t> &data) const ;
+
  private:
     // The socket identifier (handle).
     int socket_handle_;

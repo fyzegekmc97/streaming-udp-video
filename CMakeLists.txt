@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(StreamingUDPVideo)
+project(streaming-udp-video)
 
 find_package(OpenCV REQUIRED)
+find_package(Boost 1.71.0 REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${EIGEN_INCLUDE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
-
 # Default to Release mode.
 IF(NOT DEFINED CMAKE_BUILD_TYPE)
   SET(${CMAKE_BUILD_TYPE} Release ... FORCE)
@@ -41,7 +41,6 @@ file(GLOB   sender_SRC      "src/sender/*.cpp")
 file(GLOB   util_SRC        "src/util/*.cpp")
 file(GLOB   video_SRC       "src/video/*.cpp")
 
-# Add the Receiver binary.
 add_executable(
   Receiver
   src/receiver.cpp
@@ -50,12 +49,14 @@ add_executable(
   ${util_SRC}
   ${video_SRC}
 )
+
 target_link_libraries(
-  Receiver
-  ${OpenCV_LIBS}
+        Receiver
+        ${OpenCV_LIBS}
+        librt.a
+        /home/feyzi/.local/share/Trash/files/live555-latest/live/BasicUsageEnvironment/libBasicUsageEnvironment.a
 )
 
-# Add the Sender binary.
 add_executable(
   Sender
   src/sender.cpp
@@ -65,6 +66,14 @@ add_executable(
   ${video_SRC}
 )
 target_link_libraries(
-  Sender
-  ${OpenCV_LIBS}
+        Sender
+        ${OpenCV_LIBS}
+        librt.a
+        /home/feyzi/.local/share/Trash/files/live555-latest/live/BasicUsageEnvironment/libBasicUsageEnvironment.a
 )
+
+get_cmake_property(_variableNames VARIABLES)
+list (SORT _variableNames)
+foreach (_variableName ${_variableNames})
+  message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()

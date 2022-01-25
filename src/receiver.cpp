@@ -24,9 +24,12 @@ int main(int argc, char** argv) {
   }
   std::cout << "Listening on port " << port << "." << std::endl;
   BasicProtocolData protocol_data;
+  struct timespec end ;
   while (true) {  // TODO: break out cleanly when done.
     protocol_data.UnpackData(socket.GetPacket());
     protocol_data.GetImage().Display();
+    clock_gettime(CLOCK_MONOTONIC, &end);	/* mark the end time */
+
   }
   return 0;
 }
