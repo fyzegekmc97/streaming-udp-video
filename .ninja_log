@@ -1,0 +1,16 @@
+# ninja log v5
+0	80	1643119656313756943	build.ninja	57760b4042ee62a1
+4	532	1643119656849758840	CMakeFiles/Receiver.dir/src/util/util.cpp.o	c1039461f2f2a188
+0	571	1643119656889758982	CMakeFiles/Sender.dir/src/util/util.cpp.o	c36edfe0c39a373
+3	766	1643119657085759676	CMakeFiles/Receiver.dir/src/receiver/receiver_socket.cpp.o	2b76d4416064e6e8
+2	1417	1643119657737761984	CMakeFiles/Receiver.dir/src/protocols/basic_protocol.cpp.o	a27fead7086caabd
+0	1540	1643119657857762409	CMakeFiles/Sender.dir/src/sender/sender_socket.cpp.o	91609236f587d31a
+1	1597	1643119657913762608	CMakeFiles/Sender.dir/src/protocols/basic_protocol.cpp.o	933dcad49c115b3e
+1	1687	1643119658005762933	CMakeFiles/Sender.dir/src/video/video_frame.cpp.o	d37c870b092bd06f
+571	1846	1643119658165763499	CMakeFiles/Receiver.dir/src/video/video_frame.cpp.o	85c1ac9ad6752745
+533	3148	1643119659465768102	CMakeFiles/Receiver.dir/src/video/video_capture.cpp.o	773bfcd88de4b888
+1	3150	1643119659469768115	CMakeFiles/Sender.dir/src/video/video_capture.cpp.o	4aed8e21678e7c41
+1	3239	1643119659557768427	CMakeFiles/Sender.dir/src/sender.cpp.o	d30822e5d3e19120
+1	3245	1643119659561768442	CMakeFiles/Receiver.dir/src/receiver.cpp.o	5864bfb72c8dfbdb
+3245	8939	1643119665253788587	bin/Receiver	fb412122d640a224
+3239	8942	1643119665257788602	bin/Sender	1e145d11eee269a0
